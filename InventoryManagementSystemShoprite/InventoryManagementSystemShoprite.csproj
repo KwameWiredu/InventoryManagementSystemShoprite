@@ -64,6 +64,18 @@
     <Compile Include="AttendantsForm.Designer.cs">
       <DependentUpon>AttendantsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoryDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryDetailsForm.Designer.cs">
+      <DependentUpon>CategoryDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AttendantsForm.resx">
       <DependentUpon>AttendantsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryDetailsForm.resx">
+      <DependentUpon>CategoryDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

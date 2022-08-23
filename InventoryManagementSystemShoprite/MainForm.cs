@@ -40,5 +40,25 @@ namespace InventoryManagementSystemShoprite
             childForm.BringToFront();
             childForm.Show();
         }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void productbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void attendantBtn1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CategoryForm());
+        }
     }
 }

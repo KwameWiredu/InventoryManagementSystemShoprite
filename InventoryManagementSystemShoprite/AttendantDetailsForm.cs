@@ -66,7 +66,7 @@ namespace InventoryManagementSystemShoprite
                     MessageBox.Show("Your Passwords do not match!","Warning",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
-                if (MessageBox.Show("Do you really want to SAVE this Atendent?","Saving Details",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Do you really want to SAVE this Attendent?","Saving Details",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cm = new SqlCommand("INSERT INTO Attendanttb(email,fullname,password,contact)VALUES(@email,@fullname,@password,@contact)", con);
                     cm.Parameters.AddWithValue("@email", emailtxt.Text);
