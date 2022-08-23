@@ -96,7 +96,7 @@ namespace InventoryManagementSystemShoprite
                     MessageBox.Show("Your Passwords do not match!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (MessageBox.Show("Do you really want to UPDATE this Atendent?", "UPDATING Details", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Do you really want to UPDATE this Attendent?", "UPDATING Details", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cm = new SqlCommand("UPDATE Attendanttb SET fullname = @fullname, password = @password, contact = @contact WHERE email LIKE '"+emailtxt.Text+"' ", con);
                     cm.Parameters.AddWithValue("@fullname", fullnametxt.Text);

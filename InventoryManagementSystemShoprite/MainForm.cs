@@ -48,7 +48,7 @@ namespace InventoryManagementSystemShoprite
 
         private void productbtn_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new ProductForm());
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
