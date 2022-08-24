@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.attendantBtn2 = new InventoryManagementSystemShoprite.AttendantBtn();
             this.label4 = new System.Windows.Forms.Label();
+            this.attendantBtn1 = new InventoryManagementSystemShoprite.AttendantBtn();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.shopritelbl = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.attendantBtn2 = new InventoryManagementSystemShoprite.AttendantBtn();
-            this.attendantBtn1 = new InventoryManagementSystemShoprite.AttendantBtn();
             this.generalbtn = new InventoryManagementSystemShoprite.AttendantBtn();
             this.attendantBtn = new InventoryManagementSystemShoprite.AttendantBtn();
             this.productbtn = new InventoryManagementSystemShoprite.AttendantBtn();
+            this.shopritelbl = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.attendantBtn2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendantBtn1)).BeginInit();
@@ -71,6 +71,18 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // attendantBtn2
+            // 
+            this.attendantBtn2.Image = ((System.Drawing.Image)(resources.GetObject("attendantBtn2.Image")));
+            this.attendantBtn2.ImageHover = ((System.Drawing.Image)(resources.GetObject("attendantBtn2.ImageHover")));
+            this.attendantBtn2.ImageNormal = ((System.Drawing.Image)(resources.GetObject("attendantBtn2.ImageNormal")));
+            this.attendantBtn2.Location = new System.Drawing.Point(19, 54);
+            this.attendantBtn2.Name = "attendantBtn2";
+            this.attendantBtn2.Size = new System.Drawing.Size(44, 54);
+            this.attendantBtn2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.attendantBtn2.TabIndex = 17;
+            this.attendantBtn2.TabStop = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -79,6 +91,19 @@
             this.label4.Size = new System.Drawing.Size(100, 20);
             this.label4.TabIndex = 16;
             this.label4.Text = "Categories";
+            // 
+            // attendantBtn1
+            // 
+            this.attendantBtn1.Image = ((System.Drawing.Image)(resources.GetObject("attendantBtn1.Image")));
+            this.attendantBtn1.ImageHover = ((System.Drawing.Image)(resources.GetObject("attendantBtn1.ImageHover")));
+            this.attendantBtn1.ImageNormal = ((System.Drawing.Image)(resources.GetObject("attendantBtn1.ImageNormal")));
+            this.attendantBtn1.Location = new System.Drawing.Point(572, 7);
+            this.attendantBtn1.Name = "attendantBtn1";
+            this.attendantBtn1.Size = new System.Drawing.Size(77, 77);
+            this.attendantBtn1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.attendantBtn1.TabIndex = 15;
+            this.attendantBtn1.TabStop = false;
+            this.attendantBtn1.Click += new System.EventHandler(this.attendantBtn1_Click);
             // 
             // label3
             // 
@@ -107,6 +132,45 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Products";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // generalbtn
+            // 
+            this.generalbtn.Image = ((System.Drawing.Image)(resources.GetObject("generalbtn.Image")));
+            this.generalbtn.ImageHover = ((System.Drawing.Image)(resources.GetObject("generalbtn.ImageHover")));
+            this.generalbtn.ImageNormal = ((System.Drawing.Image)(resources.GetObject("generalbtn.ImageNormal")));
+            this.generalbtn.Location = new System.Drawing.Point(731, 7);
+            this.generalbtn.Name = "generalbtn";
+            this.generalbtn.Size = new System.Drawing.Size(77, 77);
+            this.generalbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.generalbtn.TabIndex = 11;
+            this.generalbtn.TabStop = false;
+            this.generalbtn.Click += new System.EventHandler(this.generalbtn_Click);
+            // 
+            // attendantBtn
+            // 
+            this.attendantBtn.Image = ((System.Drawing.Image)(resources.GetObject("attendantBtn.Image")));
+            this.attendantBtn.ImageHover = ((System.Drawing.Image)(resources.GetObject("attendantBtn.ImageHover")));
+            this.attendantBtn.ImageNormal = ((System.Drawing.Image)(resources.GetObject("attendantBtn.ImageNormal")));
+            this.attendantBtn.Location = new System.Drawing.Point(413, 7);
+            this.attendantBtn.Name = "attendantBtn";
+            this.attendantBtn.Size = new System.Drawing.Size(77, 77);
+            this.attendantBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.attendantBtn.TabIndex = 10;
+            this.attendantBtn.TabStop = false;
+            this.attendantBtn.Click += new System.EventHandler(this.attendantBtn2_Click);
+            // 
+            // productbtn
+            // 
+            this.productbtn.Image = ((System.Drawing.Image)(resources.GetObject("productbtn.Image")));
+            this.productbtn.ImageHover = ((System.Drawing.Image)(resources.GetObject("productbtn.ImageHover")));
+            this.productbtn.ImageNormal = ((System.Drawing.Image)(resources.GetObject("productbtn.ImageNormal")));
+            this.productbtn.Location = new System.Drawing.Point(254, 7);
+            this.productbtn.Name = "productbtn";
+            this.productbtn.Size = new System.Drawing.Size(77, 77);
+            this.productbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.productbtn.TabIndex = 9;
+            this.productbtn.TabStop = false;
+            this.productbtn.Click += new System.EventHandler(this.productbtn_Click);
             // 
             // shopritelbl
             // 
@@ -139,69 +203,6 @@
             this.mainPanel.Size = new System.Drawing.Size(982, 416);
             this.mainPanel.TabIndex = 2;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
-            // 
-            // attendantBtn2
-            // 
-            this.attendantBtn2.Image = ((System.Drawing.Image)(resources.GetObject("attendantBtn2.Image")));
-            this.attendantBtn2.ImageHover = ((System.Drawing.Image)(resources.GetObject("attendantBtn2.ImageHover")));
-            this.attendantBtn2.ImageNormal = ((System.Drawing.Image)(resources.GetObject("attendantBtn2.ImageNormal")));
-            this.attendantBtn2.Location = new System.Drawing.Point(19, 54);
-            this.attendantBtn2.Name = "attendantBtn2";
-            this.attendantBtn2.Size = new System.Drawing.Size(44, 54);
-            this.attendantBtn2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.attendantBtn2.TabIndex = 17;
-            this.attendantBtn2.TabStop = false;
-            // 
-            // attendantBtn1
-            // 
-            this.attendantBtn1.Image = ((System.Drawing.Image)(resources.GetObject("attendantBtn1.Image")));
-            this.attendantBtn1.ImageHover = ((System.Drawing.Image)(resources.GetObject("attendantBtn1.ImageHover")));
-            this.attendantBtn1.ImageNormal = ((System.Drawing.Image)(resources.GetObject("attendantBtn1.ImageNormal")));
-            this.attendantBtn1.Location = new System.Drawing.Point(572, 7);
-            this.attendantBtn1.Name = "attendantBtn1";
-            this.attendantBtn1.Size = new System.Drawing.Size(77, 77);
-            this.attendantBtn1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.attendantBtn1.TabIndex = 15;
-            this.attendantBtn1.TabStop = false;
-            this.attendantBtn1.Click += new System.EventHandler(this.attendantBtn1_Click);
-            // 
-            // generalbtn
-            // 
-            this.generalbtn.Image = ((System.Drawing.Image)(resources.GetObject("generalbtn.Image")));
-            this.generalbtn.ImageHover = ((System.Drawing.Image)(resources.GetObject("generalbtn.ImageHover")));
-            this.generalbtn.ImageNormal = ((System.Drawing.Image)(resources.GetObject("generalbtn.ImageNormal")));
-            this.generalbtn.Location = new System.Drawing.Point(731, 7);
-            this.generalbtn.Name = "generalbtn";
-            this.generalbtn.Size = new System.Drawing.Size(77, 77);
-            this.generalbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.generalbtn.TabIndex = 11;
-            this.generalbtn.TabStop = false;
-            // 
-            // attendantBtn
-            // 
-            this.attendantBtn.Image = ((System.Drawing.Image)(resources.GetObject("attendantBtn.Image")));
-            this.attendantBtn.ImageHover = ((System.Drawing.Image)(resources.GetObject("attendantBtn.ImageHover")));
-            this.attendantBtn.ImageNormal = ((System.Drawing.Image)(resources.GetObject("attendantBtn.ImageNormal")));
-            this.attendantBtn.Location = new System.Drawing.Point(413, 7);
-            this.attendantBtn.Name = "attendantBtn";
-            this.attendantBtn.Size = new System.Drawing.Size(77, 77);
-            this.attendantBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.attendantBtn.TabIndex = 10;
-            this.attendantBtn.TabStop = false;
-            this.attendantBtn.Click += new System.EventHandler(this.attendantBtn2_Click);
-            // 
-            // productbtn
-            // 
-            this.productbtn.Image = ((System.Drawing.Image)(resources.GetObject("productbtn.Image")));
-            this.productbtn.ImageHover = ((System.Drawing.Image)(resources.GetObject("productbtn.ImageHover")));
-            this.productbtn.ImageNormal = ((System.Drawing.Image)(resources.GetObject("productbtn.ImageNormal")));
-            this.productbtn.Location = new System.Drawing.Point(254, 7);
-            this.productbtn.Name = "productbtn";
-            this.productbtn.Size = new System.Drawing.Size(77, 77);
-            this.productbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.productbtn.TabIndex = 9;
-            this.productbtn.TabStop = false;
-            this.productbtn.Click += new System.EventHandler(this.productbtn_Click);
             // 
             // MainForm
             // 

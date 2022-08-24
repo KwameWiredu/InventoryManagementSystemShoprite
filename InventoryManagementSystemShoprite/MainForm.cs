@@ -60,5 +60,10 @@ namespace InventoryManagementSystemShoprite
         {
             openChildForm(new CategoryForm());
         }
+
+        private void generalbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new GeneralForm());
+        }
     }
 }
