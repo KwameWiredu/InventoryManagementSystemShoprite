@@ -125,6 +125,7 @@
             this.passwordtxt.Name = "passwordtxt";
             this.passwordtxt.Size = new System.Drawing.Size(472, 27);
             this.passwordtxt.TabIndex = 6;
+            this.passwordtxt.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -204,6 +205,7 @@
             this.confpasswordtxt.Name = "confpasswordtxt";
             this.confpasswordtxt.Size = new System.Drawing.Size(472, 27);
             this.confpasswordtxt.TabIndex = 13;
+            this.confpasswordtxt.UseSystemPasswordChar = true;
             // 
             // label6
             // 

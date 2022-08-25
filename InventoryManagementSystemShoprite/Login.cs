@@ -63,7 +63,7 @@ namespace InventoryManagementSystemShoprite
                 dr.Read();
                 if (dr.HasRows)
                 {
-                    MessageBox.Show("Welcome" + dr[" fullname"].ToString() + "  ", "PERMISSION GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Welcome " + dr[" fullname"].ToString() + "  ", "PERMISSION GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MainForm main = new MainForm();
                     main.ShowDialog();
                 }
@@ -98,6 +98,11 @@ namespace InventoryManagementSystemShoprite
         }
 
         private void adminattendantcmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }
