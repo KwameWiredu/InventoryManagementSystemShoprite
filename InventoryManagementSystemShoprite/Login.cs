@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ namespace InventoryManagementSystemShoprite
 {
     public partial class Login : Form
     {
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rwkkr\Documents\IMSdb.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlCommand cm = new SqlCommand();
+        SqlDataReader dr;
         public Login()
         {
             InitializeComponent();
@@ -41,6 +45,61 @@ namespace InventoryManagementSystemShoprite
             {
                 Application.Exit();
             }
+        }
+
+        private void loginbtn_Click(object sender, EventArgs e)
+        {
+            if(cmbRole.SelectedIndex == -1)
+            {
+                MessageBox.Show("You have");
+            }
+            else if (cmbRole.SelectedItem.ToString() == "Admin")
+            {
+                cm = new SqlCommand("SELECT * from Admintb WHERE email=@email AND password=@password", con);
+                cm.Parameters.AddWithValue("@email", emailtxt.Text);
+                cm.Parameters.AddWithValue("@password", passwordtxt.Text);
+                con.Open();
+                dr = cm.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    MessageBox.Show("Welcome" + dr[" fullname"].ToString() + "  ", "PERMISSION GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MainForm main = new MainForm();
+                    main.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid email or password! Are You Really an Admin?", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                con.Close();
+            }
+            else if (cmbRole.SelectedItem.ToString() == "Attendant")
+            {
+                cm = new SqlCommand("SELECT * from Attendanttb WHERE email=@email AND password=@password", con);
+                cm.Parameters.AddWithValue("@email", emailtxt.Text);
+                cm.Parameters.AddWithValue("@password", passwordtxt.Text);
+                con.Open();
+                dr = cm.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    MessageBox.Show("Welcome Attendant", "PERMISSION GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GeneralForm main = new GeneralForm();
+                    main.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid email or password! Are You Really an Attendant?", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                con.Close();
+            }
+            
+            
+        }
+
+        private void adminattendantcmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -69,5 +69,13 @@ namespace InventoryManagementSystemShoprite
             }
             LoadGeneral();
         }
+
+        private void closepicbox_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do You Want To Exit?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
