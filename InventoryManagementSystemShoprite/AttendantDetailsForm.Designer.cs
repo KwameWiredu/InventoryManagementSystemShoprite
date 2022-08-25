@@ -237,7 +237,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AttendantDetailsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AttendantDetailsForm";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.AttendantDetailsForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

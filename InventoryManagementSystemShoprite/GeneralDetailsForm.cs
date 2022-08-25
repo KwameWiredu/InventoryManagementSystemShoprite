@@ -16,6 +16,7 @@ namespace InventoryManagementSystemShoprite
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rwkkr\Documents\IMSdb.mdf;Integrated Security=True;Connect Timeout=30");
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
+
         public GeneralDetailsForm()
         {
             InitializeComponent();
@@ -62,19 +63,108 @@ namespace InventoryManagementSystemShoprite
         {
 
         }
+        int quantity = 0;
 
-        private void productdgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    
+
+        private void productdgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             productidtxt.Text = productdgv.Rows[e.RowIndex].Cells[1].Value.ToString();
             productnametxt.Text = productdgv.Rows[e.RowIndex].Cells[2].Value.ToString();
             pricetxt.Text = productdgv.Rows[e.RowIndex].Cells[4].Value.ToString();
-           
+        }
+
+        private void insertbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (productidtxt.Text == "")
+                {
+                    MessageBox.Show("Select Product!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (MessageBox.Show("Do you really want to INSERT this Product?", "Saving Details", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cm = new SqlCommand("INSERT INTO Generaltb(date,productid,quantity,price,total)VALUES(@date,@productid,@quantity,@price,@total)", con);
+                    cm.Parameters.AddWithValue("@date", generaldate.Value);
+                    cm.Parameters.AddWithValue("@productid", Convert.ToInt16(productidtxt.Text));
+                    cm.Parameters.AddWithValue("@quantity", Convert.ToInt16(quantitynud.Value));
+                    cm.Parameters.AddWithValue("@price", Convert.ToInt16(pricetxt.Text));
+                    cm.Parameters.AddWithValue("@total", Convert.ToInt16(totaltxt.Text));
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Product has been Inserted Successfully :)");
+                    
+
+                    cm = new SqlCommand("UPDATE Producttb SET quantity=(@quantity-@quantity) WHERE productid LIKE '" + productidtxt.Text + "' ", con);
+                    cm.Parameters.AddWithValue("@quantity", Convert.ToInt16(quantitynud.Text));
+                    
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    Clear();
+                    LoadProduct();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void Clear()
+        {
+            productidtxt.Clear();
+            productnametxt.Clear();
+
+            pricetxt.Clear();
+            quantitynud.Value = 0;
+            totaltxt.Clear();
+            generaldate.Value = DateTime.Now;
+        }
+
+        private void clearbtn_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
 
         private void quantitynud_ValueChanged(object sender, EventArgs e)
         {
-            int total = Convert.ToInt16(pricetxt.Text) * Convert.ToInt16(quantitynud.Value);
-            totaltxt.Text = total.ToString(); 
+
+            GetQuantity();
+            if (Convert.ToInt16(quantitynud.Value) > quantity)
+            {
+                MessageBox.Show("Quantity of selected product is more than what is available!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                quantitynud.Value = quantitynud.Value - 1;
+                return;
+            }
+            if (Convert.ToInt16(quantitynud.Value) > 0)
+            {
+                int total = Convert.ToInt16(pricetxt.Text) * Convert.ToInt16(quantitynud.Value);
+                totaltxt.Text = total.ToString();
+            }
         }
+
+        private void productnametxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void GetQuantity()
+        {
+           
+            cm = new SqlCommand("SELECT quantity FROM Producttb WHERE productid='"+ productidtxt.Text +"'", con);
+            con.Open();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                quantity = Convert.ToInt32(dr[0].ToString());
+            }
+            dr.Close();
+            con.Close();
+        }
+
+       
     }
 }
