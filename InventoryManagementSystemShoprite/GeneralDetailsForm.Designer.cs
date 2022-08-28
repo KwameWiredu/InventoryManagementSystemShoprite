@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneralDetailsForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.closepicbox = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.generalidlbl = new System.Windows.Forms.Label();
             this.quantitynud = new System.Windows.Forms.NumericUpDown();
             this.clearbtn = new System.Windows.Forms.Button();
             this.insertbtn = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generalidlbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closepicbox)).BeginInit();
             this.panel2.SuspendLayout();
@@ -95,9 +95,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 29);
+            this.label2.Size = new System.Drawing.Size(169, 29);
             this.label2.TabIndex = 3;
-            this.label2.Text = " General Details";
+            this.label2.Text = "Order Details";
             // 
             // panel2
             // 
@@ -126,6 +126,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(888, 605);
             this.panel2.TabIndex = 2;
+            // 
+            // generalidlbl
+            // 
+            this.generalidlbl.AutoSize = true;
+            this.generalidlbl.Location = new System.Drawing.Point(13, 574);
+            this.generalidlbl.Name = "generalidlbl";
+            this.generalidlbl.Size = new System.Drawing.Size(69, 20);
+            this.generalidlbl.TabIndex = 26;
+            this.generalidlbl.Text = "label10";
+            this.generalidlbl.Visible = false;
             // 
             // quantitynud
             // 
@@ -304,14 +314,14 @@
             // 
             this.productdgv.AllowUserToAddRows = false;
             this.productdgv.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productdgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productdgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.productdgv.ColumnHeadersHeight = 30;
             this.productdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.productdgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -387,16 +397,6 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.Width = 113;
-            // 
-            // generalidlbl
-            // 
-            this.generalidlbl.AutoSize = true;
-            this.generalidlbl.Location = new System.Drawing.Point(13, 574);
-            this.generalidlbl.Name = "generalidlbl";
-            this.generalidlbl.Size = new System.Drawing.Size(69, 20);
-            this.generalidlbl.TabIndex = 26;
-            this.generalidlbl.Text = "label10";
-            this.generalidlbl.Visible = false;
             // 
             // GeneralDetailsForm
             // 
