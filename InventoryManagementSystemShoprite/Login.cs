@@ -63,7 +63,7 @@ namespace InventoryManagementSystemShoprite
                 dr.Read();
                 if (dr.HasRows)
                 {
-                    MessageBox.Show("Welcome " + dr[" fullname"].ToString() + "  ", "PERMISSION GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Welcome Admin"  ", "PERMISSION GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MainForm main = new MainForm();
                     main.ShowDialog();
                 }
