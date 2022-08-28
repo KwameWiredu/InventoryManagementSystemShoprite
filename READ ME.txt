@@ -1,0 +1,11 @@
+10817756
+When the application is run, it shows the login page where the user can choose whether he or she is an attendant or admin.
+If the user selects attendants and provides the right credentials to log in, he or she would be logged into the order section of the app where they can take orders.
+if the user selects admin and provides the right credentials, he or she would be logged into the main interface of the app which contains everything about the app (no restrictions).
+for the purpose of the demonstration the following credentials would be used.
+Admin email= admin@admin.com
+admin password= admin
+attendant email= attendant@attendant.com
+attendant password= attendant
+
+The video shows how the app works.
